@@ -3,7 +3,7 @@ package lab4;
 import java.util.HashSet;
 
 /**
- * RepresentaÁ„o de um Grupo, que deve possuir um nome.
+ * Representa√ß√£o de um Grupo, que deve possuir um nome.
  * 
  * @author Gabriel Menezes Cabral - 119110372
  *
@@ -21,17 +21,31 @@ public class Grupo {
 	public HashSet<Aluno> alunosDoGrupo;
 
 	/**
-	 * ConstrÛi um grupo, a partir do nome do grupo. No grupo podem ser adicionados alunos, pelo HashSet: alunosDoGrupo.
+	 * Constr√≥i um grupo, a partir do nome do grupo. No grupo podem ser adicionados alunos, pelo HashSet: alunosDoGrupo.
 	 * 
 	 * @param nomeDoGrupo eh o nome do grupo.
 	 */
 	public Grupo(String nomeDoGrupo) {
+		validaEntrada(nomeDoGrupo);
 		this.nomeDoGrupo = nomeDoGrupo;
 		this.alunosDoGrupo = new HashSet<>();
 	}
+	
+	/**
+	 * Valida a entrada quanto ao seu conteudo
+	 *
+	 * @param entrada entrada a ser avaliada.
+	 */
+	public validaEntrada(String entrada){
+		if(entrada == null){
+			throw NullPoiterException("Erro no cadastro do grupo: nome do grupo nao pode ser nulo ou vazio.");
+		} else if (entra.equals("")) {
+			throw IllegalArgumentException("Erro no cadastro do grupo: nome do grupo nao pode ser nulo ou vazio.");
+		}
+	}
 
 	/**
-	 * MÈtodo que adiciona um aluno a um determinado grupo.
+	 * M√©todo que adiciona um aluno a um determinado grupo.
 	 * 
 	 * @param aluno eh o aluno a ser adicionado.
 	 */
@@ -69,10 +83,10 @@ public class Grupo {
 	}
 
 	/**
-	 * MÈtodo Equals que compara um objeto com outro a partir do nome do grupo.
+	 * M√©todo Equals que compara um objeto com outro a partir do nome do grupo.
 	 * 
-	 * @param obj objeto que ser· comparado.
-	 * @return um valor booleano indicando se os objetos s„o iguais ou n„o, mediante o nome do grupo.
+	 * @param obj objeto que ser√° comparado.
+	 * @return um valor booleano indicando se os objetos s√£o iguais ou n√£o, mediante o nome do grupo.
 	 */
 	@Override
 	public boolean equals(Object obj) {
